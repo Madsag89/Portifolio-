@@ -1,0 +1,625 @@
+/* CSS rest + basic styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font: mortender;
+    --secondary-font:'Montserrat', sans-serif;
+}
+
+@font-face {
+  font-family: mortender;
+  src: url(/fonts/Mortend\ Bold.ttf);
+}
+
+html{
+    font-family: mortender;
+}
+
+body{
+    background-color: white;
+    width: 100%;
+
+}
+
+/* Header */
+
+header{
+    background-color: black;
+}
+
+header > p{
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    padding: 1rem;
+    vertical-align: middle;
+    font-family: var(--main-font);
+    font-weight: 600;
+}
+
+.landing{
+    width: 100%;
+    padding: 5rem 1rem 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.landing > img{
+    height: auto;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 11.4rem;
+    max-width: 300px;
+}
+
+.landing-col{
+    padding-bottom: 3rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.landing-col:nth-last-child(1){
+    padding-bottom: 10rem;
+}
+
+.landing-col > p{
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.landing-col > p.right{
+    text-align: right;
+}
+
+.landing-col:nth-child(2) > p:nth-child(1),
+.landing-col:nth-child(2) > p.right{
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-transform: uppercase;
+}
+
+
+/* Areas of expertise */
+
+.area-of-expertise{
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 95%);
+}
+
+.area-of-expertise > h1{
+    padding: 5rem 0rem 5rem 0rem;
+    line-height: 1.4;
+    max-width: 300px;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.area-of-expertise-col {
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    max-width: 900px;
+}
+
+.area-of-expertise-col-left{
+    max-width: 350px;
+}
+
+.area-of-expertise-col-left > p{
+    font-family: var(--secondary-font);
+    padding-top: 10px;
+}
+
+.area-of-expertise-col-left h2:nth-last-child(3) {
+ -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    text-transform: uppercase;
+}
+
+.area-of-expertise-col-left > h2 {
+    text-transform: uppercase;
+    max-width: 500px;
+    letter-spacing: 2px;
+}
+
+.area-of-expertise-col-img > img{
+    display: none;
+    width: 200px;
+}
+
+.area-of-expertise-col:nth-child(4){
+    padding-bottom: 100px;
+}
+
+/* Selected work */
+
+.selected-work{
+    padding: 0rem 1rem 5rem 1rem;
+}
+
+.selected-work-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.selected-work > h2{
+   padding: 5rem 0rem 5rem 0rem;
+   line-height: 1.4;
+    max-width: 300px;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.selected-work-col{
+    text-align: center;
+    padding-bottom: 70px;
+
+}
+
+.selected-work-col > p{
+    font-family: var(--secondary-font);
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.selected-work-col > img {
+    width: 300px;
+    box-shadow: 2px 2px 10px -5px black;
+}
+
+.test{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+/* Modal */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 20px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    font-family: var(--secondary-font);
+    max-width: 500px;
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+
+
+.modal-button{
+    margin: 0 auto;
+    display: inline-block;
+    margin-top: 15px;
+    color: black;
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: white;
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.github-btn{
+    border: none;
+    background-color: white;
+
+}
+
+.github-btn > a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+     font-size: 15px;
+}
+
+.github-btn > a > i{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.github-btn > a > i:nth-of-type(1){
+    padding-left: 5px;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    color: black;
+
+}
+
+.modal-header > h2{
+    padding: 20px 20px 0px 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.modal-body{
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+
+.modal-body > img{
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+
+.modal-body > h3{
+    padding-bottom: 20px;
+}
+
+
+.modal-body > h4{
+    border-bottom: black 1px solid;
+    width: 169px;
+    margin: 0 auto;
+    padding: 15px 10px 5px 10px;
+}
+
+.modal-body > p{
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+#flatmateModal > div > div.modal-body > h4 > i:nth-of-type(1){
+    padding-left: 3px;
+}
+
+#flatmateModal > div > div.modal-body > h4 > i{
+    font-size: 14px;
+}
+
+
+/* About me */
+
+.about-me{
+    background-color: black;
+    color: white;
+    padding: 1rem 1rem 4rem 1rem;
+    clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 95%);
+}
+
+.about-me > h1{
+    padding: 5rem 0rem 5rem 0rem;
+    line-height: 1.4;
+    max-width: 300px;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.about-me-col {
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    max-width: 900px;
+}
+
+
+.about-me-col-left{
+    max-width: 350px;
+}
+
+.about-me-col-left > p{
+    font-family: var(--secondary-font);
+    padding-top: 10px;
+}
+
+.about-me-col-left h2:nth-last-child(3) {
+ -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    text-transform: uppercase;
+}
+
+.about-me-col-left > h2 {
+    text-transform: uppercase;
+    max-width: 500px;
+    letter-spacing: 2px;
+}
+
+.about-me-col-img > img{
+    display: none;
+    width: 200px;
+}
+
+.about-me-col:nth-child(4){
+    padding-bottom: 100px;
+}
+
+
+/* Contact */
+
+.contact{
+    max-width: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.contact-col > h2{
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+.contact-col > p{
+    text-align: center;
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    padding: 5px;
+}
+
+.contact-socials {
+   display: flex;
+   justify-items: center;
+   justify-content: center;
+   padding: 10px;
+}
+
+.contact-socials > a{
+    padding: 10px;
+}
+
+.fab{
+    font-size: 30px;
+}
+
+.contact-col-right > img{
+    width: 200px;
+    border-radius: 50%;
+    padding: 10px 0px 20px 0px;
+}
+
+
+.curriculum{
+  padding-bottom: 2rem;
+  font-size: 25px;
+}
+.curriculum p{
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+.curriculum > a{
+    color: white;
+}
+
+.curriculum > p > a{
+    color: white;
+}
+
+.strong{
+    text-decoration: underline 3px solid;
+   
+}
+
+@media screen and (min-width: 768px){
+
+    /* Landing*/
+
+    .landing{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .landing-col > p{
+        font-size: 40px;
+    }
+
+    .landing > img{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Area of expertise*/
+
+    .area-of-expertise{
+        margin: 0 auto;
+    }
+
+    .area-of-expertise h1{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .area-of-expertise-col{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .area-of-expertise-col-img > img{
+        display: block;
+    }
+
+    .area-of-expertise-col:nth-of-type(2){
+        flex-direction: row-reverse;
+    }
+
+    div:nth-child(3) > div.area-of-expertise-col-left > h2:nth-child(1),
+    div:nth-child(3) > div.area-of-expertise-col-left > h2:nth-child(2){
+    text-align: right;
+}
+    div:nth-child(3) > div.area-of-expertise-col-left > p{
+        text-align: right;
+    }
+
+    /* Selected work */
+
+    .selected-work-flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .selected-work > h2{
+         text-align: center;
+         margin: 0 auto;
+    }
+
+    /* About me */
+
+    .about-me{
+        margin: 0 auto;
+    }
+
+    .about-me h1{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-me-col{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .about-me-col-img > img{
+        display: block;
+    }
+
+    .about-me-col:nth-of-type(2){
+        flex-direction: row-reverse;
+    }
+
+    div:nth-child(3) > div.about-me-col-left > h2:nth-child(1),
+    div:nth-child(3) > div.about-me-col-left > h2:nth-child(2){
+    text-align: right;
+    }
+    div:nth-child(3) > div.about-me-col-left > p{
+        text-align: right;
+    }
+
+
+    /* Contact */ 
+
+    .contact{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .contact h2{
+        text-align: right;
+    }
+    
+    .contact p{
+        text-align: right;
+    }
+
+    .contact-socials{
+        justify-content: flex-end;
+    }
+
+    .contact-col-right{
+        padding-left: 20px;
+    }
+
+   .contact-socials > a:nth-child(2) > i{
+     padding-left: 10px;
+    }
+
+    .contact-socials > a{
+    padding: 0px;
+    }
+
+  
+
+}
+
+
+@media (min-width: 900px) {
+    .area-of-expertise-col {
+    margin: 0 auto;
+  }
+
+  .about-me-col{
+      margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+    .landing > img{
+        max-width: 400px;
+    }
+
+    .landing-col > p{
+        font-size: 60px;
+    }
+
+    .selected-work-col > a > img {
+        width: 400px;
+    }
+    
+}
